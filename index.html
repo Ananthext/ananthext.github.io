@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="IT portfolio showcasing Linux, networking, cloud infrastructure and homelab projects.">
+
+    <title>Ananth D | IT Portfolio</title>
+
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0b1120;
+            --panel: #131d30;
+            --text: #e8edf7;
+            --muted: #a7b5ca;
+            --accent: #70b8ff;
+            --border: #2b3b53;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 16px/1.65 system-ui, sans-serif;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        header {
+            padding: 44px 22px 34px;
+            background: #101b2e;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 6vw, 3.2rem);
+            line-height: 1.15;
+            margin: 10px 0;
+        }
+
+        h2 {
+            margin: 0 0 18px;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+        }
+
+        p {
+            color: var(--muted);
+            margin: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 22px;
+            margin-top: 22px;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 18px 22px 44px;
+        }
+
+        section {
+            padding: 25px 0;
+            scroll-margin-top: 20px;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 14px 0;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .tag {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 3px 9px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        /* Projects layout */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .project-card {
+            min-width: 0;
+            overflow: hidden;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .project-tech {
+            color: var(--accent);
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin: 0 0 14px;
+        }
+
+        .project-image {
+            display: block;
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            object-position: center;
+            background: #0b1120;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin: 0 0 16px;
+            cursor: zoom-in;
+        }
+
+        .project-content p {
+            font-size: 0.95rem;
+        }
+
+        .project-content ul {
+            padding-left: 20px;
+            margin: 12px 0;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .project-content li {
+            margin-bottom: 7px;
+        }
+
+        .project-note {
+            border-top: 1px solid var(--border);
+            padding-top: 12px;
+            margin-top: 16px;
+        }
+
+        .project-note strong {
+            color: var(--text);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 20px 22px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Responsive layout for smaller screens */
+        @media (max-width: 650px) {
+            header {
+                padding: 34px 18px 28px;
+            }
+
+            main {
+                padding: 14px 18px 34px;
+            }
+
+            section {
+                padding: 22px 0;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 220px;
+            }
+
+            .project-card {
+                padding: 16px;
+            }
+
+            nav {
+                gap: 10px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="wrap">
+            <div class="eyebrow">IT PORTFOLIO</div>
+
+            <h1>Ananth D</h1>
+
+            <p>Entry-Level IT | Linux | Networking | Cloud Infrastructure</p>
+            <p>Melbourne, Victoria, Australia</p>
+
+            <nav aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#skills">Technical Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <!-- About -->
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                I am building my career in IT, with an interest in systems
+                administration, networking, cloud infrastructure and
+                troubleshooting. I enjoy practical learning through hands-on
+                labs and self-hosted services.
+            </p>
+
+            <p>
+                This portfolio documents selected projects, technical skills
+                and lessons learned through practical experimentation.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+
+            <div class="card">
+                <h3>Systems and Cloud</h3>
+
+                <div class="tags">
+                    <span class="tag">Linux / Ubuntu</span>
+                    <span class="tag">Windows</span>
+                    <span class="tag">Oracle Cloud Infrastructure</span>
+                    <span class="tag">Virtualisation</span>
+                </div>
+
+                <h3>Networking</h3>
+
+                <div class="tags">
+                    <span class="tag">TCP/IP</span>
+                    <span class="tag">DNS</span>
+                    <span class="tag">DHCP</span>
+                    <span class="tag">Firewalls</span>
+                    <span class="tag">Wireshark</span>
+                </div>
+
+                <h3>Tools and Services</h3>
+
+                <div class="tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Docker Compose</span>
+                    <span class="tag">Nginx Proxy Manager</span>
+                    <span class="tag">Git / GitHub</span>
+                    <span class="tag">Bash</span>
+                    <span class="tag">PowerShell</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="projects-grid">
+
+                <!-- Oracle Cloud Homelab -->
+                <article class="project-card">
+                    <h3>Oracle Cloud Homelab</h3>
+
+                    <p class="project-tech">
+                        Oracle Cloud Infrastructure · Ubuntu Linux · Docker ·
+                        Docker Compose · Nginx Proxy Manager
+                    </p>
+
+                    <a href="images/homepage.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="Open the full-size Oracle Cloud homelab screenshot">
+                        <img src="images/homepage.png"
+                            alt="Homepage dashboard for my Oracle Cloud homelab — select to view full size"
+                            class="project-image" loading="lazy">
+                    </a>
+                    <div class="project-content">
+                        <p>
+                            Built and maintain a self-hosted Linux environment
+                            on Oracle Cloud Infrastructure to develop practical
+                            skills in server administration, containerisation
+                            and network services.
+                        </p>
+
+                        <ul>
+                            <li>Deploy and manage applications using Docker and Docker Compose.</li>
+                            <li>Configure reverse proxy routing and HTTPS for hosted services.</li>
+                            <li>Manage Linux services, firewall rules and network access.</li>
+                            <li>Organise self-hosted applications through a central dashboard.</li>
+                        </ul>
+
+                        <p class="project-note">
+                            <strong>Focus:</strong> Linux administration,
+                            cloud infrastructure, networking and troubleshooting.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Proxmox Virtualisation Lab -->
+                <article class="project-card">
+                    <h3>Proxmox Virtualisation Lab</h3>
+
+                    <p class="project-tech">
+                        Proxmox VE · Virtual Machines · Linux · Networking
+                    </p>
+
+                    <a href="images/proxmox.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="Open the full-size Proxmox virtualisation lab screenshot">
+                        <img src="images/proxmox.png"
+                            alt="Proxmox VE interface in my home virtualisation lab — select to view full size"
+                            class="project-image" loading="lazy">
+                    </a>
+
+                    <div class="project-content">
+                        <p>
+                            Built and used a home lab with Proxmox VE to practise
+                            virtualisation, operating system administration and
+                            network services in a hands-on environment.
+                        </p>
+
+                        <ul>
+                            <li>Create and manage virtual machines for lab environments.</li>
+                            <li>Practise Linux and Windows system administration.</li>
+                            <li>Explore Active Directory, Samba, file services and DNS filtering.</li>
+                            <li>Troubleshoot connectivity and service configuration issues.</li>
+                        </ul>
+
+                        <p class="project-note">
+                            <strong>Focus:</strong> Virtualisation,
+                            system administration, networking and practical IT support skills.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Certifications and Education -->
+        <section id="certifications">
+            <h2>Certifications and Education</h2>
+
+            <div class="card">
+                <ul>
+                    <li>Cisco Certified Network Associate (CCNA v1.1) (Feb 2025 to Feb 2028)</li>
+                    <li>Certificate IV in Cyber Security, Chisholm (2024–2026)</li>
+                    <li>Microsoft 365 Fundamentals (MS-900) (July 2025)</li>
+                    <li>Certificate III in Information Technology, Chisholm (2023–2024)</li>
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+
+            <p>
+                For professional enquiries, please use the contact details
+                provided on my resume.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="wrap">
+            Ananth D · IT Portfolio · Melbourne, Australia
+        </div>
+    </footer>
+
+</body>
+
+</html>
